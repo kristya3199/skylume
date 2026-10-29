@@ -1,0 +1,146 @@
+
+:host {
+  display: block;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+  color: #20304a;
+}
+
+ion-content.weather-content {
+  --background: #f2f6fc;
+}
+
+.page {
+  min-height: 100vh;
+  background: #f2f6fc;
+}
+
+.header {
+  padding: 28px 20px;
+  color: white;
+  background: linear-gradient(135deg, #1769d2, #48b6ed);
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.header p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.content {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 16px 48px;
+  box-sizing: border-box;
+}
+
+.intro,
+.summary {
+  padding: 22px;
+  margin-bottom: 18px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px #1b365d12;
+}
+
+.intro {
+  text-align: center;
+}
+
+.weather-icon {
+  margin-bottom: 12px;
+  font-size: 48px;
+}
+
+.intro h2,
+.summary h2 {
+  margin: 8px 0;
+  font-size: 21px;
+}
+
+.intro p,
+.summary p,
+.weather-item p {
+  color: #718096;
+  font-size: 14px;
+}
+
+.load-button,
+.retry-button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 14px;
+  color: white;
+  background: #1769d2;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.load-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.weather-list {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.weather-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid #e8edf4;
+}
+
+.weather-item:last-child {
+  border-bottom: none;
+}
+
+.weather-item p {
+  margin-bottom: 0;
+}
+
+.temperature {
+  color: #1769d2;
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.loading,
+.empty,
+.error {
+  padding: 20px;
+  margin-bottom: 18px;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+}
+
+.error {
+  color: #c62828;
+}
+
+@media (max-width: 400px) {
+  .header h1 {
+    font-size: 23px;
+  }
+
+  .intro,
+  .summary {
+    padding: 16px;
+  }
+}

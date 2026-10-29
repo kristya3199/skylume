@@ -1,0 +1,7 @@
+{
+  "name": "cuaca-jakarta",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

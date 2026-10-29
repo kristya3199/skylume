@@ -1,0 +1,58 @@
+
+<div class="page">
+  <header class="header">
+    <h1>Prakiraan Cuaca</h1>
+    <p>Jakarta, Indonesia</p>
+  </header>
+
+  <main class="content">
+    <section class="intro">
+      <div class="weather-icon">☀️</div>
+      <h2>Informasi Cuaca Jakarta</h2>
+      <p>Prakiraan suhu udara setiap jam.</p>
+
+      <button
+        class="load-button"
+        (click)="ambilCuaca()"
+        [disabled]="loading">
+        {{ loading ? 'Memuat data...' : 'Ambil Data Cuaca' }}
+      </button>
+    </section>
+
+    <div class="loading" *ngIf="loading">
+      Mengambil data cuaca, tunggu sebentar...
+    </div>
+
+    <div class="error" *ngIf="errorMessage">
+      {{ errorMessage }}
+      <button class="retry-button" (click)="ambilCuaca()">
+        Coba Lagi
+      </button>
+    </div>
+
+    <section *ngIf="!loading && dataCuaca.length > 0">
+      <div class="summary">
+        <h2>Data Suhu Hari Ini</h2>
+        <p>{{ dataCuaca.length }} data prakiraan per jam</p>
+      </div>
+
+      <div class="weather-list">
+        <div
+          class="weather-item"
+          *ngFor="let item of dataCuaca; let i = index">
+          <div>
+            <strong>Pukul {{ item.waktu }}</strong>
+            <p>Suhu udara</p>
+          </div>
+          <span class="temperature">{{ item.suhu }} °C</span>
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="empty"
+      *ngIf="!loading && !errorMessage && dataCuaca.length === 0">
+      Tekan tombol Ambil Data Cuaca untuk melihat prakiraan.
+    </div>
+  </main>
+</div>
